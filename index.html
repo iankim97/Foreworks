@@ -3,57 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(주)비전오토메이션 | 머신비전 및 자동화 장비</title>
+    <title>포어웍스(FORE WORKS) | 머신비전 & 자동화 솔루션</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
-        .hero-section { background: #f8f9fa; padding: 100px 0; border-bottom: 1px solid #dee2e6; }
-        .feature-icon { font-size: 2rem; color: #0d6efd; }
+        :root {
+            --fw-orange: #E28577; /* 로고 상단 코랄 */
+            --fw-green: #53823E;  /* 로고 하단 그린 */
+            --fw-dark: #333333;
+            --fw-light: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #ffffff;
+            color: var(--fw-dark);
+        }
+
+        /* 내비게이션 바 */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border-bottom: 3px solid var(--fw-green);
+            padding: 15px 0;
+        }
+        .navbar-brand img {
+            height: 40px; /* 로고 크기 조절 */
+            margin-right: 10px;
+        }
+        .nav-link {
+            color: var(--fw-dark) !important;
+            font-weight: 500;
+            margin-left: 20px;
+        }
+        .nav-link:hover {
+            color: var(--fw-orange) !important;
+        }
+
+        /* 히어로 섹션 */
+        .hero-section {
+            background: linear-gradient(135deg, #ffffff 0%, #fef6f5 100%);
+            padding: 120px 0;
+            text-align: center;
+        }
+        .hero-section h1 {
+            color: var(--fw-green);
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* 버튼 스타일 */
+        .btn-fw {
+            background-color: var(--fw-orange);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .btn-fw:hover {
+            background-color: var(--fw-green);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* 특징 섹션 */
+        .feature-box {
+            padding: 40px;
+            border-radius: 20px;
+            background: var(--fw-light);
+            transition: 0.3s;
+            height: 100%;
+        }
+        .feature-box:hover {
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .feature-title {
+            color: var(--fw-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: var(--fw-dark);
+            color: #999;
+            padding: 50px 0;
+            margin-top: 100px;
+        }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">VISION AUTO</a>
-            <div class="navbar-nav">
-                <a class="nav-link active" href="#">홈</a>
-                <a class="nav-link" href="#">제품소개</a>
-                <a class="nav-link" href="#">기술지원</a>
+            <a class="navbar-brand" href="#">
+                <img src="포어웍스로고.png" alt="포어웍스 로고">
+                <span style="font-weight: 700; color: var(--fw-green);">FORE WORKS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">회사소개</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">머신비전</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">자동화장비</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">문의하기</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section text-center">
+    <header class="hero-section">
         <div class="container">
-            <h1 class="display-4 fw-bold">Smart Machine Vision</h1>
-            <p class="lead">정밀한 검사와 자동화 솔루션으로 생산성을 혁신합니다.</p>
-            <a href="#contact" class="btn btn-primary btn-lg">견적 문의하기</a>
-        </div>
-    </header>
-
-    <section class="container my-5">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="feature-icon mb-2">🔍</div>
-                <h3>머신비전 검사</h3>
-                <p>AI 기반 딥러닝 알고리즘으로 불량률 0%에 도전합니다.</p>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-icon mb-2">⚙️</div>
-                <h3>자동화 장비</h3>
-                <p>고속 정밀 제어 시스템으로 최적화된 라인을 구축합니다.</p>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-icon mb-2">🛠️</div>
-                <h3>커스텀 제작</h3>
-                <p>고객사의 환경에 맞는 맞춤형 설비를 설계하고 제작합니다.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-light py-4 text-center border-top">
-        <p>&copy; 2024 (주)비전오토메이션. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
+            <h1 class="display-3">Smart Vision,<br>Perfect Automation</h1>
+            <p>포어웍스는 정
