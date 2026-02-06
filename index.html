@@ -1,87 +1,95 @@
-
 <!DOCTYPE html>
 
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>포어웍스(FORE WORKS) | AI 머신비전 & 자동화 솔루션</title>
+<title>포어웍스(FORE WORKS) | AI Vision & Automation System</title>
+<link href="" rel="stylesheet">
 <link href="" rel="stylesheet">
 <style>
 :root { --fw-orange: #E28577; --fw-green: #53823E; --fw-dark: #2c3e50; }
-body { font-family: 'Malgun Gothic', sans-serif; word-break: keep-all; background-color: #ffffff; }
-.navbar { background: #fff; border-bottom: 3px solid var(--fw-green); padding: 15px 0; }
-.hero-section { background: linear-gradient(135deg, #fff 0%, #f4f7f2 100%); padding: 120px 0; text-align: center; }
-.hero-title { color: var(--fw-green); font-weight: 700; font-size: 3.2rem; }
+body { font-family: 'Noto Sans KR', sans-serif; background-color: #ffffff; color: var(--fw-dark); line-height: 1.8; word-break: keep-all; }
+.navbar { background: rgba(255,255,255,0.98) !important; border-bottom: 2px solid var(--fw-green); padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.navbar-brand img { height: 50px; }
+.hero-section { background: linear-gradient(135deg, #ffffff 0%, #f4f7f2 100%); padding: 160px 0; text-align: center; }
+.hero-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 3.5rem; color: var(--fw-green); letter-spacing: -1.5px; line-height: 1.2; }
 .highlight { color: var(--fw-orange); }
-.service-card { border: 1px solid #eee; border-radius: 15px; padding: 35px; height: 100%; transition: 0.3s; background: white; }
-.service-card:hover { border-color: var(--fw-orange); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-.badge-fw { background: var(--fw-green); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; display: inline-block; margin-bottom: 15px; }
-footer { background: #222; color: #ccc; padding: 50px 0; margin-top: 60px; }
+.hero-sub { font-size: 1.3rem; color: #555; margin-top: 30px; font-weight: 300; }
+.feature-card { border: none; border-radius: 25px; padding: 50px 30px; background: #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.06); transition: all 0.4s ease; height: 100%; border-bottom: 6px solid transparent; }
+.feature-card:hover { transform: translateY(-20px); border-bottom: 6px solid var(--fw-orange); box-shadow: 0 25px 50px rgba(226, 133, 119, 0.2); }
+.icon-circle { width: 70px; height: 70px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 25px; }
+.card-title { font-weight: 700; color: var(--fw-green); margin-bottom: 15px; }
+.btn-fw { background: var(--fw-orange); color: #fff; border: none; padding: 15px 40px; border-radius: 50px; font-weight: 700; box-shadow: 0 10px 20px rgba(226, 133, 119, 0.3); transition: 0.3s; text-decoration: none; display: inline-block; }
+.btn-fw:hover { background: var(--fw-green); color: #fff; transform: translateY(-3px); }
+footer { background: #222; color: #aaa; padding: 60px 0; font-size: 0.9rem; }
+.footer-logo { color: #fff; font-weight: 800; font-size: 1.4rem; margin-bottom: 20px; }
 </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg sticky-top">
 <div class="container">
-<a class="navbar-brand" href="#">
-<img src="images/logo.png" alt="FORE WORKS" height="50">
-<span class="ms-2 fw-bold" style="color:var(--fw-green); font-size: 1.5rem; vertical-align: middle;">FORE WORKS</span>
+<a class="navbar-brand d-flex align-items-center" href="#">
+<img src="images/logo.png" alt="포어웍스 로고">
+<span class="ms-3 fw-bold" style="font-size: 1.5rem; color: var(--fw-green);">FORE WORKS</span>
 </a>
 </div>
 </nav>
 <header class="hero-section">
 <div class="container">
-<h1 class="hero-title">Smart Vision, 
+<h1 class="hero-title">Smart Vision,
 
 
 <span class="highlight">Perfect Automation</span></h1>
-<p class="lead mt-4 text-secondary">포어웍스는 회사소개서에 명시된 바와 같이 
+<p class="hero-sub">포어웍스는 AI 머신비전과 고정밀 자동화 시스템을 통해
 
 
-차세대 AI 검사 솔루션과 최적화된 자동화 시스템을 통해 공정의 가치를 더합니다.</p>
-<div class="mt-5">
-<a href="#contact" class="btn btn-lg px-5 text-white" style="background-color: var(--fw-orange); border-radius: 30px; font-weight: bold;">문의하기</a>
-</div>
+제조 현장의 품질 혁신과 생산성을 극대화합니다.</p>
+<div class="mt-5"><a href="mailto:contact@foreworks.com" class="btn-fw">기술 상담 문의하기</a></div>
 </div>
 </header>
 <section class="container my-5 py-5">
 <div class="row g-4">
-<div class="col-md-6">
-<div class="service-card">
-<span class="badge-fw">AI Machine Vision</span>
-<h3 class="fw-bold mb-3">AI 딥러닝 검사 솔루션</h3>
-<p class="text-muted">기존 방식의 한계를 넘어서는 AI 알고리즘으로 비정형 불량 및 미세 결함을 정밀하게 검출합니다.</p>
-<ul class="mt-3 text-secondary">
-<li class="mb-2">외관 불량 검사 (스크래치, 이물, 크랙 등)</li>
-<li class="mb-2">2D/3D 하이브리드 고속 검사 시스템</li>
-</ul>
+<div class="col-md-4 text-center">
+<div class="feature-card">
+<div class="icon-circle">🔍</div>
+<h4 class="card-title">AI 머신비전</h4>
+<p class="text-muted small">AI 딥러닝 알고리즘 기반
+
+
+비정형 불량의 정밀 검출 솔루션</p>
 </div>
 </div>
-<div class="col-md-6">
-<div class="service-card">
-<span class="badge-fw">Automation System</span>
-<h3 class="fw-bold mb-3">맞춤형 자동화 설비</h3>
-<p class="text-muted">고객사 공정에 최적화된 고속 핸들링 및 인라인 자동 검사 장비를 설계하고 제작합니다.</p>
-<ul class="mt-3 text-secondary">
-<li class="mb-2">고속 픽앤플레이스(Pick & Place) 시스템</li>
-<li class="mb-2">공정 최적화 로봇 셀(Robot Cell) 통합 구축</li>
-</ul>
+<div class="col-md-4 text-center">
+<div class="feature-card">
+<div class="icon-circle">⚙️</div>
+<h4 class="card-title">자동화 시스템</h4>
+<p class="text-muted small">공정 맞춤형 하드웨어 설계와
+
+
+소프트웨어 통합 제어 시스템</p>
+</div>
+</div>
+<div class="col-md-4 text-center">
+<div class="feature-card">
+<div class="icon-circle">🌪️</div>
+<h4 class="card-title">Air Floating</h4>
+<p class="text-muted small">비접촉 반송 플레이트를 통한
+
+
+고속·고정밀 비접촉 이송 기술</p>
 </div>
 </div>
 </div>
 </section>
-<footer id="contact" class="text-center">
+<footer class="text-center">
 <div class="container">
-<h4 class="text-white mb-4">FORE WORKS</h4>
-<p class="mb-1">포어웍스(FORE WORKS)는 AI 머신비전 및 자동화 장비 전문 기업입니다.</p>
-<p>Email: contact@foreworks.com | 경기도 기술연구소 빌딩</p>
-<div class="mt-4 pt-4 border-top border-secondary">
-<p class="small text-secondary">&copy; 2026 FORE WORKS Co., Ltd. All Rights Reserved.</p>
-</div>
+<div class="footer-logo">FORE WORKS Co., Ltd.</div>
+<p><strong>본사:</strong> 경기도 오산시 수목원로88번길 35, 지식산업센터 26층 F2608A호</p>
+<p><strong>연구소:</strong> 동 지식산업센터 633호 | <strong>공장:</strong> 화성시 정남면 정남동로 339 가동</p>
+<p class="mt-4">Email: contact@foreworks.com | 대표이사: 서경식</p>
+<p class="mt-4 opacity-50">&copy; 2026 FORE WORKS. All Rights Reserved.</p>
 </div>
 </footer>
-<script src=""></script>
 </body>
 </html>
-
-(여기까지 복사 끝)
