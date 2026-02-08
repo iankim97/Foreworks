@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOREWORKS - Vision Inspection System | System Engineering | Automation</title>
+    <title>FOREWORKS - 비전 검사 시스템 및 자동화 솔루션 전문기업</title>
     <style>
         * {
             margin: 0;
@@ -14,180 +14,275 @@
         :root {
             --primary-green: #7ED321;
             --primary-orange: #FF6B35;
-            --dark-gray: #2C3E50;
-            --light-gray: #ECF0F1;
-            --white: #FFFFFF;
+            --dark: #1a1a1a;
+            --gray: #666666;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            font-family: 'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
             line-height: 1.6;
-            color: var(--dark-gray);
+            color: var(--dark);
             background: var(--white);
         }
 
-        /* Header */
+        /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-orange) 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-
-        header h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
-            position: relative;
-            z-index: 1;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            font-weight: 300;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Navigation */
-        nav {
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
+        .header-top {
+            background: var(--dark);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+        }
+
+        .header-top a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .header-top a:hover {
+            opacity: 1;
+        }
+
+        .header-main {
+            padding: 20px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
-            padding: 20px 0;
-            flex-wrap: wrap;
-        }
-
-        nav li {
-            margin: 0 25px;
+            gap: 40px;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--dark-gray);
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            padding: 10px 20px;
-            border-radius: 5px;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
         }
 
-        nav a:hover {
-            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
-            color: white;
-            transform: translateY(-2px);
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-orange));
+            transition: width 0.3s;
         }
 
-        /* Container */
+        nav a:hover::after {
+            width: 100%;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Section */
-        section {
-            padding: 80px 0;
-        }
-
-        section:nth-child(even) {
-            background: var(--light-gray);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            text-align: center;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(126, 211, 33, 0.05) 0%, rgba(255, 107, 53, 0.05) 100%);
+            padding: 120px 0;
             position: relative;
-            padding-bottom: 20px;
+            overflow: hidden;
         }
 
-        .section-title::after {
+        .hero::before {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-green), var(--primary-orange));
-            border-radius: 2px;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(126, 211, 33, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
-        /* Company Info Grid */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
-        .info-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            border-left: 4px solid var(--primary-green);
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
         }
 
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: var(--dark);
         }
 
-        .info-card h3 {
-            color: var(--primary-orange);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .info-card p, .info-card ul {
-            color: var(--dark-gray);
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 40px;
             line-height: 1.8;
         }
 
-        .info-card ul {
-            list-style-position: inside;
-            margin-top: 10px;
+        .btn-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            color: var(--white);
+            box-shadow: 0 5px 20px rgba(126, 211, 33, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(126, 211, 33, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--dark);
+            border: 2px solid var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 500;
         }
 
         /* Business Areas */
         .business-areas {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .business-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            margin-top: 50px;
         }
 
         .business-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
+            background: var(--white);
+            padding: 50px 30px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
@@ -199,689 +294,425 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 4px;
             background: linear-gradient(90deg, var(--primary-green), var(--primary-orange));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .business-card:hover::before {
+            transform: scaleX(1);
         }
 
         .business-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .business-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(126, 211, 33, 0.1), rgba(255, 107, 53, 0.1));
         }
 
         .business-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--primary-orange);
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .business-card p {
-            font-size: 1.1rem;
-            color: var(--dark-gray);
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
 
-        /* Tech Grid */
+        .business-card .learn-more {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s;
+        }
+
+        .business-card .learn-more:hover {
+            gap: 10px;
+        }
+
+        /* Technology Section */
+        .technology {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-top: 50px;
         }
 
-        .tech-item {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        .tech-card {
+            padding: 40px 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
             transition: all 0.3s;
         }
 
-        .tech-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        .tech-card:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        .tech-item h4 {
-            color: var(--primary-green);
-            font-size: 1.4rem;
+        .tech-card h4 {
+            font-size: 1.3rem;
+            color: var(--dark);
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
-        .tech-item ul {
+        .tech-card ul {
             list-style: none;
-            margin-top: 15px;
         }
 
-        .tech-item li {
+        .tech-card li {
             padding: 8px 0;
-            padding-left: 25px;
+            color: var(--gray);
             position: relative;
+            padding-left: 20px;
         }
 
-        .tech-item li::before {
+        .tech-card li::before {
             content: '▸';
             position: absolute;
             left: 0;
             color: var(--primary-orange);
-            font-weight: bold;
         }
 
-        /* Products Table */
-        .products-table {
-            width: 100%;
-            margin-top: 40px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .products-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .products-table th {
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
             background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
-            color: white;
-            padding: 20px;
-            text-align: left;
-            font-size: 1.1rem;
-        }
-
-        .products-table td {
-            padding: 20px;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .products-table tr:hover {
-            background: #f8f9fa;
-        }
-
-        /* Features */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .feature-box {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 10px;
+            color: var(--white);
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            position: relative;
         }
 
-        .feature-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: var(--primary-orange);
-            border-radius: 0 0 5px 5px;
-        }
-
-        .feature-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .feature-number {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
+        .cta h2 {
+            font-size: 2.5rem;
             margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        .feature-box h4 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--dark-gray);
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
         }
 
-        .feature-box p {
-            color: #555;
-            line-height: 1.7;
+        .cta .btn {
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .cta .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
 
         /* Footer */
         footer {
-            background: var(--dark-gray);
-            color: white;
+            background: var(--dark);
+            color: var(--white);
             padding: 60px 0 30px;
-            margin-top: 80px;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-section h3 {
-            color: var(--primary-green);
             margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
-        .footer-section p {
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.7);
             margin-bottom: 10px;
             line-height: 1.8;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-green);
         }
 
         .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.7);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .business-grid,
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            header h1 {
+            .hero h1 {
                 font-size: 2.5rem;
             }
 
-            header p {
-                font-size: 1rem;
+            .hero p {
+                font-size: 1.1rem;
             }
 
             nav ul {
                 flex-direction: column;
-                align-items: center;
+                gap: 15px;
             }
 
-            nav li {
-                margin: 10px 0;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .business-areas,
+            .business-grid,
             .tech-grid,
-            .features {
+            .stats-grid {
                 grid-template-columns: 1fr;
             }
-        }
 
-        /* Highlight Box */
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(126, 211, 33, 0.1), rgba(255, 107, 53, 0.1));
-            border-left: 5px solid var(--primary-orange);
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: 5px;
-        }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
 
-        .highlight-box h3 {
-            color: var(--primary-orange);
-            margin-bottom: 15px;
-        }
-
-        /* Specs Table */
-        .specs-table {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-top: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .specs-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .specs-table th {
-            background: var(--primary-green);
-            color: white;
-            padding: 15px;
-            text-align: left;
-        }
-
-        .specs-table td {
-            padding: 15px;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .specs-table tr:nth-child(even) {
-            background: #f8f9fa;
+            .btn-group {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <h1>FOREWORKS</h1>
-        <p>Vision Inspection System | System Engineering | Automation</p>
+        <div class="header-top">
+            <div class="container">
+                <a href="mailto:foreworks@foreworks.co.kr">📧 foreworks@foreworks.co.kr</a>
+                <a href="tel:070-4353-2999">📞 070-4353-2999</a>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="FOREWORKS">
+                    </a>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">홈</a></li>
+                            <li><a href="company.html">회사소개</a></li>
+                            <li><a href="business.html">사업영역</a></li>
+                            <li><a href="technology.html">보유기술</a></li>
+                            <li><a href="products.html">주요제품</a></li>
+                            <li><a href="contact.html">문의하기</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#company">회사소개</a></li>
-            <li><a href="#business">사업영역</a></li>
-            <li><a href="#technology">보유기술</a></li>
-            <li><a href="#products">주요제품</a></li>
-            <li><a href="#air-floating">Air Floating</a></li>
-            <li><a href="#contact">연락처</a></li>
-        </ul>
-    </nav>
-
-    <!-- Company Overview -->
-    <section id="company">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h2 class="section-title">회사 개요</h2>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>회사 정보</h3>
-                    <p><strong>회사명:</strong> ㈜포어웍스 (FOREWORKS CO., LTD)</p>
-                    <p><strong>대표이사:</strong> 서경식</p>
-                    <p><strong>설립일:</strong> 2019.06.01 / 2025.05.01 (법인 전환)</p>
-                    <p><strong>임직원수:</strong> 6명 (2025년 10월 현재)</p>
+            <div class="hero-content">
+                <h1>
+                    <span class="highlight">혁신적인 기술</span>로<br>
+                    미래를 설계합니다
+                </h1>
+                <p>
+                    비전 검사 시스템, 시스템 엔지니어링, 자동화 솔루션 전문기업<br>
+                    반도체, 디스플레이, 이차전지 산업의 최적 파트너
+                </p>
+                <div class="btn-group">
+                    <a href="products.html" class="btn btn-primary">주요 제품 보기</a>
+                    <a href="contact.html" class="btn btn-secondary">문의하기</a>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="info-card">
-                    <h3>본사 및 시설</h3>
-                    <p><strong>본사:</strong> 경기도 오산시 수목원로88번길 35, 지식산업센터 26층 F2608A호</p>
-                    <p><strong>연구소:</strong> 동 지식산업센터 633호</p>
-                    <p><strong>공장:</strong> 경기도 화성시 정남면 정남동로 339 가동</p>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">개발 장비 종류</div>
                 </div>
-
-                <div class="info-card">
-                    <h3>사업 분야</h3>
-                    <ul>
-                        <li>디스플레이 장비 부품 (Air Floating System, 대전방지 코팅, 진공척)</li>
-                        <li>Display용 자동 검사기 및 세정기</li>
-                        <li>반도체용 자동 검사/측정기</li>
-                        <li>물류/자동화 설비</li>
-                        <li>이차전지 생산 자동화 설비</li>
-                        <li>자동화 ROBOT</li>
-                    </ul>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">핵심 사업 영역</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">보유 기술 분야</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">고객 만족도</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Business Areas -->
-    <section id="business">
+    <section class="business-areas">
         <div class="container">
-            <h2 class="section-title">사업 영역</h2>
-            
-            <div class="highlight-box">
-                <h3>반도체, Display, 이차전지, 임플란트 등 다양한 분야의 시스템 개발 공급</h3>
+            <div class="section-title">
+                <h2>핵심 사업 영역</h2>
+                <p>반도체, 디스플레이, 이차전지, 임플란트 등 다양한 분야의 시스템 개발 공급</p>
             </div>
-
-            <div class="business-areas">
+            <div class="business-grid">
                 <div class="business-card">
-                    <h3>비접촉 반송 시스템</h3>
-                    <p>Air Floating System</p>
-                    <p>고속, 고정밀 비접촉 반송 구현</p>
-                </div>
-
-                <div class="business-card">
+                    <div class="business-icon">🔍</div>
                     <h3>자동 검사 시스템</h3>
-                    <p>AOI System</p>
-                    <p>AI 기반 비전 검사 솔루션</p>
+                    <p>AI 기반 비전 검사 솔루션으로 제품의 품질을 정밀하게 검사합니다. 반도체 웨이퍼부터 디스플레이 패널까지 다양한 제품에 적용 가능합니다.</p>
+                    <a href="products.html#aoi" class="learn-more">자세히 보기 →</a>
                 </div>
-
                 <div class="business-card">
+                    <div class="business-icon">📦</div>
+                    <h3>비접촉 반송 시스템</h3>
+                    <p>Air Floating 기술을 활용한 고속, 고정밀 비접촉 반송 시스템. Particle Zero와 대전방지 기술로 최상의 품질을 보장합니다.</p>
+                    <a href="products.html#air-floating" class="learn-more">자세히 보기 →</a>
+                </div>
+                <div class="business-card">
+                    <div class="business-icon">⚙️</div>
                     <h3>자동화 시스템</h3>
-                    <p>Automation System</p>
-                    <p>스마트 팩토리 자동화 설비</p>
+                    <p>스마트 팩토리 구현을 위한 통합 자동화 솔루션. 물류 자동화부터 생산라인 최적화까지 완벽하게 지원합니다.</p>
+                    <a href="products.html#automation" class="learn-more">자세히 보기 →</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Technology -->
-    <section id="technology">
+    <section class="technology">
         <div class="container">
-            <h2 class="section-title">보유 기술 및 경쟁력</h2>
-            
+            <div class="section-title">
+                <h2>보유 기술</h2>
+                <p>축적된 노하우와 특허 기술로 최고의 솔루션을 제공합니다</p>
+            </div>
             <div class="tech-grid">
-                <div class="tech-item">
+                <div class="tech-card">
                     <h4>System Design</h4>
                     <ul>
-                        <li>자동화 시스템 요소설계, 라인설계</li>
-                        <li>통합제어 시스템 설계 및 구축</li>
-                        <li>자동화 시스템 장비 개발</li>
+                        <li>자동화 시스템 설계</li>
+                        <li>통합제어 시스템 구축</li>
+                        <li>라인 최적화 설계</li>
                     </ul>
                 </div>
-
-                <div class="tech-item">
-                    <h4>Mechanical / Electrical Design</h4>
+                <div class="tech-card">
+                    <h4>Mechanical Design</h4>
                     <ul>
-                        <li>기구 및 물류 시스템 설계</li>
-                        <li>시스템 기구 레이아웃 설계</li>
-                        <li>전장설계/배선</li>
-                        <li>유무선 통신 시스템 통합 제어</li>
+                        <li>기구 시스템 설계</li>
+                        <li>물류 시스템 설계</li>
+                        <li>전장 설계 및 배선</li>
                     </ul>
                 </div>
-
-                <div class="tech-item">
+                <div class="tech-card">
                     <h4>Air Floating System</h4>
                     <ul>
-                        <li>비접촉 반송 물류 시스템 구축</li>
-                        <li>비접촉 반송 장치 설계 및 제작</li>
+                        <li>비접촉 반송 시스템</li>
                         <li>다수 특허 보유</li>
+                        <li>대전방지 코팅 기술</li>
                     </ul>
                 </div>
-
-                <div class="tech-item">
+                <div class="tech-card">
                     <h4>Optical Design</h4>
                     <ul>
-                        <li>Machine Vision 광학계 설계</li>
-                        <li>Sample Test를 통한 최적 H/W 선정</li>
-                        <li>카메라, 렌즈, 조명 최적화</li>
+                        <li>Machine Vision 광학계</li>
+                        <li>최적 H/W 선정</li>
+                        <li>조명 시스템 설계</li>
                     </ul>
                 </div>
-
-                <div class="tech-item">
+                <div class="tech-card">
                     <h4>S/W Development</h4>
                     <ul>
-                        <li>Machine Vision 프로그램</li>
-                        <li>Motion Control / User Interface</li>
-                        <li>AI (인공지능) 적용 소프트웨어 개발</li>
+                        <li>Vision 알고리즘 개발</li>
+                        <li>AI 소프트웨어 개발</li>
+                        <li>Motion Control 시스템</li>
                     </ul>
                 </div>
-
-                <div class="tech-item">
-                    <h4>Machining</h4>
+                <div class="tech-card">
+                    <h4>Precision Machining</h4>
                     <ul>
-                        <li>반도체 및 디스플레이 장비 부품 가공</li>
-                        <li>정밀 스테이지 / 기계 부품 가공</li>
-                        <li>대전방지 코팅 기술 (다수 특허 보유)</li>
+                        <li>정밀 부품 가공</li>
+                        <li>반도체 장비 부품</li>
+                        <li>디스플레이 장비 부품</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products -->
-    <section id="products">
+    <!-- CTA Section -->
+    <section class="cta">
         <div class="container">
-            <h2 class="section-title">주요 제품 및 납품 실적</h2>
-            
-            <div class="products-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>적용분야</th>
-                            <th>장비명</th>
-                            <th>상세설명</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Semiconductor</td>
-                            <td>Wafer Flatness Measurement System</td>
-                            <td>Wafer의 두께, Bow/Warp/TTV를 자동 측정</td>
-                        </tr>
-                        <tr>
-                            <td>Semiconductor</td>
-                            <td>Wafer Edge Profile Monitoring System</td>
-                            <td>Wafer의 Edge Shape, Orientation Flat Length, Notch Shape 측정</td>
-                        </tr>
-                        <tr>
-                            <td>Semiconductor</td>
-                            <td>LED PSS Wafer Inspection System</td>
-                            <td>LED 공정용 사파이어 기판 표면 검사</td>
-                        </tr>
-                        <tr>
-                            <td>Display</td>
-                            <td>Cover Glass Inspection System</td>
-                            <td>휴대폰 cover glass 표면 결함 검사 (2D, 3D 가능)</td>
-                        </tr>
-                        <tr>
-                            <td>Display</td>
-                            <td>Bare Glass Inspection System</td>
-                            <td>LCD/OLED 원판 (4-8세대) 검사, 내부 이물 및 표면 Particle 검사</td>
-                        </tr>
-                        <tr>
-                            <td>Display</td>
-                            <td>In-line Edge & Surface Inspection (AOI)</td>
-                            <td>OLED 공정용 원판 glass (6세대) 표면 Particle과 Edge 결함 검사</td>
-                        </tr>
-                        <tr>
-                            <td>Display</td>
-                            <td>Non Contact Glass Transfer System</td>
-                            <td>Glass 부상 후 구동부로 이송하는 비접촉 물류 시스템</td>
-                        </tr>
-                        <tr>
-                            <td>Secondary Battery</td>
-                            <td>Electrode Inspection System</td>
-                            <td>이차전지 음극제품의 커팅, 코팅상태 검사</td>
-                        </tr>
-                        <tr>
-                            <td>Medical</td>
-                            <td>Implant Drill Measurement System</td>
-                            <td>Implant 부품 정렬, 측정 후 양불품 분류</td>
-                        </tr>
-                        <tr>
-                            <td>Mobility</td>
-                            <td>Gear Inspection System</td>
-                            <td>헬리컬 기어 외관 AI 검사 및 양불 분류</td>
-                        </tr>
-                        <tr>
-                            <td>Mobility</td>
-                            <td>Mobility Manufacturing System</td>
-                            <td>전기차 제조 라인 물류 시스템</td>
-                        </tr>
-                        <tr>
-                            <td>Mobility</td>
-                            <td>Mobility Vision Inspection</td>
-                            <td>차량 하부 이미지 촬상 후 AI 분석 (중고차 시장, 경매장 적용)</td>
-                        </tr>
-                        <tr>
-                            <td>Factory Automation</td>
-                            <td>Parcel Unloading Conveyor</td>
-                            <td>컨테이너 박스 자동 하차 장치</td>
-                        </tr>
-                        <tr>
-                            <td>Factory Automation</td>
-                            <td>Parcel Pickup Tower</td>
-                            <td>택배 보관/배출 자동 처리 장치</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h2>프로젝트를 시작할 준비가 되셨나요?</h2>
+            <p>포어웍스의 전문가들이 최적의 솔루션을 제안해드립니다</p>
+            <a href="contact.html" class="btn">지금 문의하기</a>
         </div>
     </section>
 
-    <!-- Air Floating System -->
-    <section id="air-floating">
-        <div class="container">
-            <h2 class="section-title">Air Floating System</h2>
-            
-            <div class="highlight-box">
-                <h3>비접촉 반송 플레이트</h3>
-                <p>Glass를 부상시킨 후 구동부에 의해 정밀한 위치로 이송이 가능한 Air Floating Conveyor System의 핵심 구성품</p>
-                <p>FPD, 반도체 산업의 기술발전으로 필수적인 비접촉 반송 시스템 - Particle 문제 해결 및 대전방지 기술 적용</p>
-            </div>
-
-            <h3 style="text-align: center; margin: 50px 0 30px; color: var(--primary-orange); font-size: 2rem;">주요 특징</h3>
-            
-            <div class="features">
-                <div class="feature-box">
-                    <div class="feature-number">01</div>
-                    <h4>고속, 고정밀, 비접촉 반송</h4>
-                    <p>속도 2m/sec, 떨림 3μm, 부상높이 최대 350μm 구현. 공기소모량 최소화로 경제성 우수</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-number">02</div>
-                    <h4>Particle Zero</h4>
-                    <p>다공성 소재 미사용, 특화된 기술력으로 Particle 완전 제거</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-number">03</div>
-                    <h4>FPD 반송 시스템 최적</h4>
-                    <p>LCD, OLED용 Glass 반송에 최적화된 설계</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-number">04</div>
-                    <h4>다양한 Application</h4>
-                    <p>일반반송, 정밀 반송(FPD용 검사기) 등 대면적 제품 안정적 반송</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-number">05</div>
-                    <h4>Antistatic 구현</h4>
-                    <p>자체 개발 도전성 도료로 도전성, 내구성, 내마모성 강화된 대전방지 코팅 기술</p>
-                </div>
-            </div>
-
-            <h3 style="text-align: center; margin: 50px 0 30px; color: var(--primary-green); font-size: 2rem;">경쟁력</h3>
-            
-            <div class="features">
-                <div class="feature-box">
-                    <div class="feature-number">✓</div>
-                    <h4>고객 맞춤형 제작</h4>
-                    <p>다양한 사이즈 공급 가능</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-number">✓</div>
-                    <h4>컴팩트한 외관</h4>
-                    <p>설치가 쉬움</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-number">✓</div>
-                    <h4>유지보수 비용 절감</h4>
-                    <p>잔고장 없음</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-number">✓</div>
-                    <h4>탁월한 내구성</h4>
-                    <p>Scratch, 먼지 등에 강함</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="feature-number">✓</div>
-                    <h4>적은 공기 소모량</h4>
-                    <p>경제성 탁월</p>
-                </div>
-            </div>
-
-            <h3 style="text-align: center; margin: 50px 0 30px; color: var(--primary-orange); font-size: 2rem;">제품 적용 범위</h3>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>경량, 대면적 유리기판 및 필름 반송</h3>
-                </div>
-                <div class="info-card">
-                    <h3>FPD 검사장비용 고속, 고정밀 반송</h3>
-                </div>
-                <div class="info-card">
-                    <h3>반도체 웨이퍼 핸들링</h3>
-                </div>
-            </div>
-
-            <h3 style="text-align: center; margin: 50px 0 30px; color: var(--primary-green); font-size: 2rem;">제품 사양</h3>
-            
-            <div class="specs-table">
-                <table>
-                    <tr>
-                        <th>구분</th>
-                        <th>사양</th>
-                    </tr>
-                    <tr>
-                        <td>사이즈 (L × W × H)</td>
-                        <td>1000 × 140 × 26 mm (고객 요청에 의해 변경 가능)</td>
-                    </tr>
-                    <tr>
-                        <td>사용 유체</td>
-                        <td>AIR</td>
-                    </tr>
-                    <tr>
-                        <td>사용 온도 범위</td>
-                        <td>0 ~ 50 ℃</td>
-                    </tr>
-                    <tr>
-                        <td>사용 압력 범위</td>
-                        <td>(진공) 0 ~ 0.5 MPa, (0 ~ -40 KPa)</td>
-                    </tr>
-                    <tr>
-                        <td>부상 높이</td>
-                        <td>100 ~ 300 μm (진공 사용시 50~100 μm 부상 조절 가능)</td>
-                    </tr>
-                    <tr>
-                        <td>진직도 (평탄도)</td>
-                        <td>LCD Glass 0.5t: ±25 μm 이하(일반형), ±15 μm 이하(진공형)</td>
-                    </tr>
-                    <tr>
-                        <td>정지시 떨림 (Fluctuation)</td>
-                        <td>LCD Glass 0.5t: ±1.5 μm 이하 (진공형)</td>
-                    </tr>
-                    <tr>
-                        <td>소비 유량 (each Hole)</td>
-                        <td>5.8 ℓ/min (0.1~0.6 ℓ/min)</td>
-                    </tr>
-                    <tr>
-                        <td>중량</td>
-                        <td>8.2 Kg</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="highlight-box" style="margin-top: 40px;">
-                <h3>Type 구분</h3>
-                <p><strong>Type 1. 정밀 반송용:</strong> 검사 Zone 대응 가능한 정밀 반송 (부상량: 200μm 이내, 떨림: ±1.5μm 이하)</p>
-                <p><strong>Type 2. 일반 반송용:</strong> 일반 반송</p>
-                <p style="margin-top: 15px;"><strong>※ 자체 설계, 제작 시스템을 구축하여 고객 사양에 맞춰 제작 및 공급 가능</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <footer id="contact">
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>FOREWORKS</h3>
-                    <p>Vision Inspection System</p>
-                    <p>System Engineering</p>
-                    <p>Automation</p>
+                    <p>비전 검사 시스템, 시스템 엔지니어링, 자동화 솔루션 전문기업</p>
+                    <p style="margin-top: 20px;">We work for your Works</p>
                 </div>
-
                 <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p><strong>본사:</strong> 경기도 오산시 수목원로88번길 35, 지식산업센터 26층 F2608A호</p>
-                    <p><strong>Email:</strong> foreworks@foreworks.co.kr</p>
-                    <p><strong>Tel:</strong> 070-4353-2999</p>
-                    <p><strong>Fax:</strong> 070-4032-2727</p>
+                    <h3>바로가기</h3>
+                    <a href="company.html">회사소개</a>
+                    <a href="business.html">사업영역</a>
+                    <a href="technology.html">보유기술</a>
+                    <a href="products.html">주요제품</a>
                 </div>
-
                 <div class="footer-section">
-                    <h3>We work for your Works</h3>
-                    <p>반도체, Display, 이차전지 등</p>
-                    <p>다양한 분야의 시스템 개발 전문기업</p>
+                    <h3>제품</h3>
+                    <a href="products.html#aoi">자동 검사 시스템</a>
+                    <a href="products.html#air-floating">Air Floating System</a>
+                    <a href="products.html#automation">자동화 시스템</a>
+                </div>
+                <div class="footer-section">
+                    <h3>연락처</h3>
+                    <p>경기도 오산시 수목원로88번길 35<br>지식산업센터 26층 F2608A호</p>
+                    <a href="mailto:foreworks@foreworks.co.kr">foreworks@foreworks.co.kr</a>
+                    <a href="tel:070-4353-2999">070-4353-2999</a>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>Copyright © by FOREWORKS All rights reserved.</p>
+                <p>Copyright © 2025 FOREWORKS. All rights reserved.</p>
             </div>
         </div>
     </footer>
