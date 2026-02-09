@@ -308,3 +308,45 @@ footer {
     .tech-item { flex-direction: column; align-items: stretch; }
     .tech-img-box { min-width: 100%; }
 }
+
+/##### Product Page Specific Styles #####/
+.product-spec-list {
+    list-style: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: var(--soft-gray);
+    border-radius: 10px;
+}
+
+.product-spec-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.9rem;
+}
+
+.product-spec-list li:last-child {
+    border-bottom: none;
+}
+
+.product-spec-list li span:first-child {
+    font-weight: bold;
+    color: var(--primary-navy);
+}
+
+.btn-detail {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--primary-navy);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.btn-detail:hover {
+    background: var(--accent-green);
+}
