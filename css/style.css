@@ -83,15 +83,13 @@ nav a:hover, nav a.active { color: var(--primary-navy); font-weight: 700; }
 /* 히어로 섹션 이미지 배경 적용 */
 .page-hero {
     /* 배경 이미지와 어두운 필터를 동시에 적용 */
-    background: linear-gradient(rgba(20, 30, 48, 0.8), rgba(20, 30, 48, 0.8)), 
-                url('../images/main-bg.jpg');
-    
-    background-size: cover;       /* 화면에 꽉 차게 */
+    background: linear-gradient(rgba(20, 30, 48, 0.8), rgba(20, 30, 48, 0.8)), url('../images/main-bg.jpg');
+    /* background-size: cover;       화면에 꽉 차게 */
     background-position: center;  /* 중앙 정렬 */
     background-repeat: no-repeat;
     background-attachment: fixed; /* 스크롤 시 배경 고정 (세련된 효과) */
     
-    padding: 150px 0;             /* 상하 여백을 늘려 더 웅장하게 */
+    padding: 75px 0;             /* 상하 여백을 늘려 더 웅장하게 */
     text-align: center;
     color: var(--white);
 }
@@ -423,6 +421,7 @@ footer {
 @media (max-width: 850px) {
     .contact-wrapper { grid-template-columns: 1fr; }
 }
+
 
 
 
