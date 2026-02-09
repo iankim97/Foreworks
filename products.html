@@ -12,8 +12,8 @@
         }
 
         :root {
-            --primary-navy: #2C3E50; /* 차분한 메인 네이비 */
-            --accent-green: #53823E; /* 슬로건 포인트 그린 */
+            --primary-navy: #2C3E50; /* index와 동일한 메인 네이비 */
+            --accent-green: #53823E; /* 모든 페이지 공통 슬로건 그린 */
             --soft-gray: #F8F9FA;
             --border-gray: #E9ECEF;
             --text-main: #34495E;
@@ -28,7 +28,7 @@
             background: var(--white);
         }
 
-        /* Header */
+        /* Header (모든 페이지 통일) */
         header {
             background: var(--white);
             border-bottom: 1px solid var(--border-gray);
@@ -50,7 +50,6 @@
             padding: 15px 0;
         }
 
-        /* 로고 영역 */
         .logo-area {
             display: flex;
             align-items: center;
@@ -101,7 +100,7 @@
             font-weight: 700;
         }
 
-        /* Page Hero */
+        /* Hero Section */
         .page-hero {
             background: var(--primary-navy);
             padding: 60px 0;
@@ -111,7 +110,7 @@
 
         .page-hero h1 { font-size: 2.2rem; margin-bottom: 8px; }
 
-        /* Products Section */
+        /* Products Layout */
         section { padding: 80px 0; }
 
         .section-title {
@@ -119,12 +118,6 @@
             margin-bottom: 60px;
         }
 
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--primary-navy);
-        }
-
-        /* Product List */
         .product-item {
             display: flex;
             align-items: center;
@@ -132,12 +125,6 @@
             margin-bottom: 80px;
             padding-bottom: 80px;
             border-bottom: 1px solid var(--border-gray);
-        }
-
-        .product-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
         }
 
         .product-item:nth-child(even) {
@@ -157,9 +144,7 @@
             border: 1px solid var(--border-gray);
         }
 
-        .product-info {
-            flex: 1;
-        }
+        .product-info { flex: 1; }
 
         .product-info h3 {
             font-size: 1.8rem;
@@ -171,34 +156,17 @@
 
         .product-info h3::before {
             content: '';
-            width: 4px;
-            height: 24px;
+            width: 4px; height: 24px;
             background: var(--accent-green);
             margin-right: 12px;
             border-radius: 2px;
         }
 
-        .product-info p {
-            font-size: 1.05rem;
-            color: var(--text-main);
-            margin-bottom: 25px;
-        }
-
-        .spec-list {
-            list-style: none;
-        }
-
+        .spec-list { list-style: none; margin-top: 20px; }
         .spec-list li {
             padding: 8px 0;
             border-bottom: 1px dashed var(--border-gray);
             font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        .spec-list li strong {
-            color: var(--primary-navy);
-            width: 120px;
-            display: inline-block;
         }
 
         footer {
@@ -206,12 +174,6 @@
             color: rgba(255,255,255,0.6);
             padding: 40px 0;
             text-align: center;
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 900px) {
-            .product-item, .product-item:nth-child(even) { flex-direction: column; gap: 30px; }
-            .header-content { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -243,38 +205,31 @@
     <section class="page-hero">
         <div class="container">
             <h1>Our Products</h1>
-            <p>초정밀 기술로 실현하는 미래 산업의 핵심 제품군</p>
+            <p>포어웍스의 혁신적인 제품 라인업을 소개합니다</p>
         </div>
     </section>
 
     <section>
         <div class="container">
-            <div class="section-title">
-                <h2>제품 라인업</h2>
-            </div>
-
             <div class="product-item">
-                <div class="product-img">Vision Inspection System Image</div>
+                <div class="product-img">제품 이미지 준비 중</div>
                 <div class="product-info">
                     <h3>비전 검사 시스템</h3>
-                    <p>고성능 광학계와 최신 검사 알고리즘을 결합하여 반도체 및 디스플레이 공정의 미세 결함을 완벽하게 포착합니다.</p>
+                    <p>고정밀 카메라와 독자적인 알고리즘으로 미세 결함을 완벽하게 포착합니다.</p>
                     <ul class="spec-list">
-                        <li><strong>검사 범위</strong> 반도체 웨이퍼, FPD(Flat Panel Display)</li>
-                        <li><strong>주요 기술</strong> AI 딥러닝 기반 자동 판독 (Auto Judgement)</li>
-                        <li><strong>특장점</strong> 생산 수율 향상 및 인건비 절감 극대화</li>
+                        <li><strong>검사 대상:</strong> 반도체, 디스플레이, 2차전지</li>
+                        <li><strong>주요 특징:</strong> 실시간 결함 판독 및 AI 딥러닝 기술 적용</li>
                     </ul>
                 </div>
             </div>
-
             <div class="product-item">
-                <div class="product-img">Air Floating Stage Image</div>
+                <div class="product-img">제품 이미지 준비 중</div>
                 <div class="product-info">
                     <h3>Air Floating Stage</h3>
-                    <p>공압을 이용한 비접촉 이송 기술로 대형 기판의 스크래치를 방지하고 무진동 고정밀 이송을 실현합니다.</p>
+                    <p>비접촉 이송 기술로 제품 손상을 방지하고 공정 효율을 극대화합니다.</p>
                     <ul class="spec-list">
-                        <li><strong>적용 공정</strong> 노광, 검사, 증착 이송 라인</li>
-                        <li><strong>제어 정밀도</strong> Micro-meter 단위의 높이 제어</li>
-                        <li><strong>신뢰성</strong> 클린룸(Cleanroom) 최적화 설계</li>
+                        <li><strong>제어 정밀도:</strong> Micro-meter 수준의 높이 유지</li>
+                        <li><strong>적용 분야:</strong> 대형 기판 및 정밀 소자 이송</li>
                     </ul>
                 </div>
             </div>
