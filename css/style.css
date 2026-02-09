@@ -1,10 +1,116 @@
-/* style.css 내용 예시 */
+/* css/style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --primary-navy: #2C3E50;
     --accent-green: #53823E;
+    --soft-gray: #F8F9FA;
+    --border-gray: #E9ECEF;
+    --text-main: #34495E;
+    --text-muted: #7F8C8D;
+    --white: #ffffff;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+    line-height: 1.7;
     color: var(--text-main);
+    background: var(--white);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-gray);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 12px;
+}
+
+.logo-img { height: 45px; width: auto; }
+
+.logo-text-group { display: flex; flex-direction: column; }
+
+.company-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-navy);
+    line-height: 1;
+}
+
+.company-slogan {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-green);
+    margin-top: 4px;
+}
+
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+nav a:hover, nav a.active { color: var(--primary-navy); font-weight: 700; }
+
+/* Page Hero */
+.page-hero {
+    background: var(--primary-navy);
+    padding: 60px 0;
+    text-align: center;
+    color: var(--white);
+}
+
+/* 지도 가운데 정렬 수정본 */
+.map-container {
+    width: 100%;
+    max-width: 1100px; /* 컨테이너 폭과 일치 */
+    height: 450px;
+    margin: 0 auto 30px; /* 좌우 auto로 가운데 정렬 */
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--border-gray);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-navy);
+    color: rgba(255,255,255,0.6);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* 제품/기술 카드 공통 스타일 */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 60px 0;
 }
