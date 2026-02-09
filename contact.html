@@ -12,737 +12,265 @@
         }
 
         :root {
-            --primary-green: #7ED321;
-            --primary-orange: #FF6B35;
-            --dark: #1a1a1a;
-            --gray: #666666;
-            --light-gray: #f5f5f5;
+            --primary-navy: #2C3E50; /* 차분한 메인 네이비 */
+            --accent-green: #53823E; /* 슬로건 포인트 그린 */
+            --soft-gray: #F8F9FA;
+            --border-gray: #E9ECEF;
+            --text-main: #34495E;
+            --text-muted: #7F8C8D;
             --white: #ffffff;
         }
 
         body {
-            font-family: 'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
             background: var(--white);
         }
 
-        /* Header & Navigation */
+        /* Header */
         header {
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border-gray);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .header-top {
-            background: var(--dark);
-            color: var(--white);
-            padding: 10px 0;
-            font-size: 0.9rem;
-        }
-
-        .header-top .container {
-            display: flex;
-            justify-content: flex-end;
-            gap: 30px;
-        }
-
-        .header-top a {
-            color: var(--white);
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-
-        .header-top a:hover {
-            opacity: 1;
-        }
-
-        .header-main {
-            padding: 20px 0;
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 15px 0;
         }
 
-        .logo {
+        /* 로고 영역 */
+        .logo-area {
             display: flex;
             align-items: center;
+            text-decoration: none;
+            gap: 12px;
         }
 
-        .logo img {
-            height: 50px;
+        .logo-img {
+            height: 45px;
             width: auto;
-            transition: transform 0.3s;
         }
 
-        .logo img:hover {
-            transform: scale(1.05);
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            line-height: 1;
+        }
+
+        .company-slogan {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            margin-top: 4px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 40px;
+            gap: 25px;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--text-main);
             font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.3s;
-            position: relative;
+            transition: 0.3s;
         }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-green), var(--primary-orange));
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after,
-        nav a.active::after {
-            width: 100%;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        nav a:hover, nav a.active {
+            color: var(--primary-navy);
+            font-weight: 700;
         }
 
         /* Page Hero */
         .page-hero {
-            background: linear-gradient(135deg, rgba(126, 211, 33, 0.05) 0%, rgba(255, 107, 53, 0.05) 100%);
-            padding: 80px 0;
+            background: var(--primary-navy);
+            padding: 60px 0;
             text-align: center;
+            color: var(--white);
         }
 
-        .page-hero h1 {
-            font-size: 3rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
+        .page-hero h1 { font-size: 2.2rem; margin-bottom: 8px; }
 
-        .page-hero p {
-            font-size: 1.2rem;
-            color: var(--gray);
-        }
+        /* Contact Section */
+        section { padding: 80px 0; }
 
-        /* Section */
-        section {
-            padding: 100px 0;
-        }
-
-        section:nth-child(even) {
-            background: var(--light-gray);
-        }
-
-        /* Contact Grid */
-        .contact-grid {
+        .contact-layout {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        /* Contact Info */
-        .contact-info {
-            background: var(--white);
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
         }
 
         .contact-info h2 {
-            font-size: 2rem;
-            color: var(--dark);
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .info-item {
-            margin-bottom: 35px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .info-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .info-item h3 {
-            font-size: 1.3rem;
-            color: var(--primary-orange);
-            margin-bottom: 15px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .info-item p {
-            color: var(--gray);
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        .info-item a {
-            color: var(--primary-green);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .info-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            background: var(--white);
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .contact-form h2 {
-            font-size: 2rem;
-            color: var(--dark);
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .form-group {
+            font-size: 1.8rem;
+            color: var(--primary-navy);
             margin-bottom: 25px;
         }
 
+        .info-item {
+            margin-bottom: 30px;
+        }
+
+        .info-item h3 {
+            font-size: 1.1rem;
+            color: var(--accent-green);
+            margin-bottom: 10px;
+        }
+
+        .info-item p { color: var(--text-muted); }
+
+        /* Form Style */
+        .contact-form {
+            background: var(--soft-gray);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid var(--border-gray);
+        }
+
+        .form-group { margin-bottom: 20px; }
+
         .form-group label {
             display: block;
-            margin-bottom: 10px;
-            color: var(--dark);
+            margin-bottom: 8px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-group input, .form-group textarea {
             width: 100%;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
+            padding: 12px;
+            border: 1px solid var(--border-gray);
             border-radius: 8px;
-            font-size: 1rem;
             font-family: inherit;
-            transition: all 0.3s;
         }
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-group input:focus, .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary-green);
-            box-shadow: 0 0 0 3px rgba(126, 211, 33, 0.1);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            border-color: var(--primary-navy);
         }
 
         .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
+            background: var(--primary-navy);
             color: var(--white);
+            padding: 15px 30px;
             border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(126, 211, 33, 0.3);
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(126, 211, 33, 0.4);
-        }
-
-        .form-note {
-            margin-top: 20px;
-            padding: 15px;
-            background: var(--light-gray);
             border-radius: 8px;
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Quick Contact Cards */
-        .quick-contact {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .quick-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .quick-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-        }
-
-        .quick-icon {
-            display: inline-flex;
-            width: 70px;
-            height: 70px;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(126, 211, 33, 0.1), rgba(255, 107, 53, 0.1));
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .quick-card h3 {
-            font-size: 1.3rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .quick-card p {
-            color: var(--gray);
-            line-height: 1.7;
-        }
-
-        .quick-card a {
-            color: var(--primary-green);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .quick-card a:hover {
-            color: var(--primary-orange);
-        }
-
-        /* Map Section */
-        .map-section {
-            margin-top: 60px;
-        }
-
-        .map-section h2 {
-            font-size: 2rem;
-            color: var(--dark);
-            margin-bottom: 30px;
             font-weight: 700;
-            text-align: center;
-        }
-
-        .map-container {
-            background: var(--light-gray);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            height: 500px;
-        }
-
-        .map-container iframe {
+            cursor: pointer;
             width: 100%;
-            height: 100%;
-            border: none;
+            transition: 0.3s;
         }
 
-        /* Business Hours */
-        .business-hours {
-            background: linear-gradient(135deg, rgba(126, 211, 33, 0.05), rgba(255, 107, 53, 0.05));
-            border-left: 5px solid var(--primary-orange);
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 30px;
-        }
+        .submit-btn:hover { background: #1a252f; }
 
-        .business-hours h3 {
-            font-size: 1.5rem;
-            color: var(--dark);
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hours-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .hours-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-        }
-
-        .hours-item strong {
-            color: var(--dark);
-        }
-
-        .hours-item span {
-            color: var(--gray);
-        }
-
-        /* Footer */
         footer {
-            background: var(--dark);
-            color: var(--white);
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 10px;
-            line-height: 1.8;
-            text-decoration: none;
-            display: block;
-        }
-
-        .footer-section a:hover {
-            color: var(--primary-green);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
+            background: var(--primary-navy);
+            color: rgba(255,255,255,0.6);
+            padding: 40px 0;
             text-align: center;
-            color: rgba(255,255,255,0.5);
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .quick-contact {
-                grid-template-columns: 1fr;
-            }
-
-            .hours-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .page-hero h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form,
-            .contact-info {
-                padding: 30px;
-            }
+        @media (max-width: 900px) {
+            .contact-layout { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="header-top">
-            <div class="container">
-                <a href="mailto:foreworks@foreworks.co.kr">📧 foreworks@foreworks.co.kr</a>
-                <a href="tel:070-4353-2999">📞 070-4353-2999</a>
-            </div>
-        </div>
-        <div class="header-main">
-            <div class="container">
-                <div class="header-content">
-                    <a href="index.html" class="logo">
-                        <img src="images/logo.png" alt="FOREWORKS">
-                    </a>
-                    <nav>
-                        <ul>
-                            <li><a href="index.html">홈</a></li>
-                            <li><a href="company.html">회사소개</a></li>
-                            <li><a href="business.html">사업영역</a></li>
-                            <li><a href="technology.html">보유기술</a></li>
-                            <li><a href="products.html">주요제품</a></li>
-                            <li><a href="contact.html" class="active">문의하기</a></li>
-                        </ul>
-                    </nav>
-                </div>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo-area">
+                    <img src="images/logo.png" alt="FOREWORKS" class="logo-img">
+                    <div class="logo-text-group">
+                        <span class="company-name">FOREWORKS</span>
+                        <span class="company-slogan">"We work for your works"</span>
+                    </div>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">홈</a></li>
+                        <li><a href="company.html">회사소개</a></li>
+                        <li><a href="business.html">사업영역</a></li>
+                        <li><a href="contact.html" class="active">문의하기</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
 
-    <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <h1>문의하기</h1>
-            <p>포어웍스의 전문가들이 최적의 솔루션을 제안해드립니다</p>
+            <h1>Contact Us</h1>
+            <p>포어웍스는 언제나 고객의 목소리에 귀를 기울입니다</p>
         </div>
     </section>
 
-    <!-- Quick Contact -->
     <section>
         <div class="container">
-            <div class="quick-contact">
-                <div class="quick-card">
-                    <div class="quick-icon">📞</div>
-                    <h3>전화 문의</h3>
-                    <p>평일 09:00 - 18:00</p>
-                    <p><a href="tel:070-4353-2999">070-4353-2999</a></p>
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h2>기술 및 사업 문의</h2>
+                    <div class="info-item">
+                        <h3>📍 본사 위치</h3>
+                        <p>경기도 오산시 수목원로88번길 35<br>지식산업센터 26층 F2608A호</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📞 전화 및 팩스</h3>
+                        <p>T. 070-4353-2999<br>F. 070-4032-2727</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>✉️ 이메일</h3>
+                        <p>foreworks@foreworks.co.kr</p>
+                    </div>
                 </div>
-                <div class="quick-card">
-                    <div class="quick-icon">📧</div>
-                    <h3>이메일 문의</h3>
-                    <p>24시간 접수 가능</p>
-                    <p><a href="mailto:foreworks@foreworks.co.kr">foreworks@foreworks.co.kr</a></p>
-                </div>
-                <div class="quick-card">
-                    <div class="quick-icon">📠</div>
-                    <h3>팩스</h3>
-                    <p>문서 전송</p>
-                    <p>070-4032-2727</p>
-                </div>
-            </div>
 
-            <div class="contact-grid">
-                <!-- Contact Form -->
                 <div class="contact-form">
-                    <h2>온라인 문의</h2>
                     <form>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">이름 *</label>
-                                <input type="text" id="name" name="name" required placeholder="이름을 입력하세요">
-                            </div>
-                            <div class="form-group">
-                                <label for="company">회사명</label>
-                                <input type="text" id="company" name="company" placeholder="회사명을 입력하세요">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">이메일 *</label>
-                                <input type="email" id="email" name="email" required placeholder="example@email.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">연락처 *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="010-0000-0000">
-                            </div>
-                        </div>
-
                         <div class="form-group">
-                            <label for="category">문의 분야 *</label>
-                            <select id="category" name="category" required>
-                                <option value="">선택하세요</option>
-                                <option value="aoi">자동 검사 시스템 (AOI)</option>
-                                <option value="air-floating">비접촉 반송 시스템</option>
-                                <option value="automation">자동화 시스템</option>
-                                <option value="semiconductor">반도체 장비</option>
-                                <option value="display">디스플레이 장비</option>
-                                <option value="battery">이차전지 장비</option>
-                                <option value="other">기타 문의</option>
-                            </select>
+                            <label>성함/기업명</label>
+                            <input type="text" placeholder="이름 또는 회사명을 입력하세요">
                         </div>
-
                         <div class="form-group">
-                            <label for="subject">제목 *</label>
-                            <input type="text" id="subject" name="subject" required placeholder="문의 제목을 입력하세요">
+                            <label>이메일 주소</label>
+                            <input type="email" placeholder="example@email.com">
                         </div>
-
                         <div class="form-group">
-                            <label for="message">문의 내용 *</label>
-                            <textarea id="message" name="message" required placeholder="문의 내용을 상세히 입력해주세요"></textarea>
+                            <label>문의 제목</label>
+                            <input type="text" placeholder="문의 주제를 입력하세요">
                         </div>
-
-                        <button type="submit" class="submit-btn">문의하기</button>
-
-                        <div class="form-note">
-                            <strong>※ 개인정보 처리방침</strong><br>
-                            입력하신 정보는 문의 응대 목적으로만 사용되며, 관련 법령에 따라 안전하게 보관됩니다.
-                            문의 접수 후 1-2 영업일 내에 담당자가 연락드립니다.
+                        <div class="form-group">
+                            <label>문의 내용</label>
+                            <textarea rows="5" placeholder="상세 내용을 입력해 주세요"></textarea>
                         </div>
+                        <button type="button" class="submit-btn">문의 보내기</button>
                     </form>
                 </div>
-
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <h2>연락처 정보</h2>
-                    
-                    <div class="info-item">
-                        <h3>📍 본사</h3>
-                        <p>경기도 오산시 수목원로88번길 35<br>
-                        지식산업센터 26층 F2608A호</p>
-                    </div>
-
-                    <div class="info-item">
-                        <h3>🔬 연구소</h3>
-                        <p>동 지식산업센터 633호</p>
-                    </div>
-
-                    <div class="info-item">
-                        <h3>🏭 공장</h3>
-                        <p>경기도 화성시 정남면 정남동로 339 가동</p>
-                    </div>
-
-                    <div class="info-item">
-                        <h3>📞 연락처</h3>
-                        <p>
-                            전화: <a href="tel:070-4353-2999">070-4353-2999</a><br>
-                            팩스: 070-4032-2727<br>
-                            이메일: <a href="mailto:foreworks@foreworks.co.kr">foreworks@foreworks.co.kr</a>
-                        </p>
-                    </div>
-
-                    <div class="business-hours">
-                        <h3>⏰ 운영 시간</h3>
-                        <div class="hours-grid">
-                            <div class="hours-item">
-                                <strong>평일</strong>
-                                <span>09:00 - 18:00</span>
-                            </div>
-                            <div class="hours-item">
-                                <strong>점심시간</strong>
-                                <span>12:00 - 13:00</span>
-                            </div>
-                            <div class="hours-item">
-                                <strong>주말/공휴일</strong>
-                                <span>휴무</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section style="background: var(--light-gray);">
-        <div class="container">
-            <div class="map-section">
-                <h2>찾아오시는 길</h2>
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.8995!2d127.0741!3d37.1497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDA4JzU5LjAiTiAxMjfCsDA0JzI2LjgiRQ!5e0!3m2!1sko!2skr!4v1234567890"
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-
-                <div class="business-hours" style="margin-top: 40px; border-left-color: var(--primary-green);">
-                    <h3>🚗 오시는 방법</h3>
-                    <div style="color: var(--gray); line-height: 2; margin-top: 15px;">
-                        <p><strong>대중교통:</strong></p>
-                        <p>• 오산역에서 도보 15분<br>
-                        • 지식산업센터 정류장 하차 (버스 이용 가능)</p>
-                        
-                        <p style="margin-top: 20px;"><strong>자가용:</strong></p>
-                        <p>• 경부고속도로 오산IC 이용<br>
-                        • 건물 내 주차장 이용 가능 (방문 전 연락 부탁드립니다)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>FOREWORKS</h3>
-                    <p>비전 검사 시스템, 시스템 엔지니어링, 자동화 솔루션 전문기업</p>
-                    <p style="margin-top: 20px;">We work for your Works</p>
-                </div>
-                <div class="footer-section">
-                    <h3>바로가기</h3>
-                    <a href="company.html">회사소개</a>
-                    <a href="business.html">사업영역</a>
-                    <a href="technology.html">보유기술</a>
-                    <a href="products.html">주요제품</a>
-                </div>
-                <div class="footer-section">
-                    <h3>제품</h3>
-                    <a href="products.html#semiconductor">반도체 장비</a>
-                    <a href="products.html#display">디스플레이 장비</a>
-                    <a href="products.html#others">기타 산업</a>
-                </div>
-                <div class="footer-section">
-                    <h3>연락처</h3>
-                    <p>경기도 오산시 수목원로88번길 35<br>지식산업센터 26층 F2608A호</p>
-                    <a href="mailto:foreworks@foreworks.co.kr">foreworks@foreworks.co.kr</a>
-                    <a href="tel:070-4353-2999">070-4353-2999</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>Copyright © 2025 FOREWORKS. All rights reserved.</p>
-            </div>
+            <p>© 2025 FOREWORKS CO., LTD. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // 폼 제출 처리 (실제 서버 연동은 별도 작업 필요)
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('문의가 접수되었습니다.\n빠른 시일 내에 담당자가 연락드리겠습니다.\n감사합니다.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
