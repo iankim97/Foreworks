@@ -838,58 +838,61 @@
     </section>
 
     <!-- Location -->
-    <section>
+<section>
         <div class="container">
             <div class="section-title">
                 <h2>오시는 길</h2>
                 <p>포어웍스를 찾아오시는 방법</p>
             </div>
             
-            <div class="location-section">
-                <div class="location-info">
-                    <h3>📍 본사 위치</h3>
-                    
-                    <div class="location-item">
-                        <h4>주소</h4>
-                        <p>경기도 오산시 수목원로88번길 35<br>지식산업센터 26층 F2608A호</p>
-                    </div>
-
-                    <div class="location-item">
-                        <h4>전화</h4>
-                        <p><a href="tel:070-4353-2999">070-4353-2999</a></p>
-                    </div>
-
-                    <div class="location-item">
-                        <h4>팩스</h4>
-                        <p>070-4032-2727</p>
-                    </div>
-
-                    <div class="location-item">
-                        <h4>이메일</h4>
-                        <p><a href="mailto:foreworks@foreworks.co.kr">foreworks@foreworks.co.kr</a></p>
-                    </div>
-
-                    <div class="location-item">
-                        <h4>대중교통</h4>
-                        <p>• 오산역: 도보 15분<br>
-                        • 버스: 지식산업센터 정류장 하차</p>
-                    </div>
-
-                    <div class="location-item">
-                        <h4>주차안내</h4>
-                        <p>건물 내 주차장 이용 가능<br>(방문 전 연락 부탁드립니다)</p>
-                    </div>
+            <div class="location-layout">
+                <div class="map-container" style="width: 100%; height: 450px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-bottom: 40px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3177.346849926839!2d127.0658414763351!3d37.16851174712066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b3bc0c102c98d%3A0x7a305d2e09121a91!2z6rK96riw64-EIOyYpOyCsOy5CDsiJeu66mY66GcODjrsojquLggMzU!5e0!3m2!1sko!2skr!4v1715650000000!5m2!1sko!2skr" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
 
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3180.3914478589995!2d127.054671397046!3d37.14339067647785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b4753fce3d57d%3A0x692a70c9ada80c46!2z7ZiE64yA7YWM65287YOA7JuMQ01D7KeA7Iud7IKw7JeF7IS87YSw!5e0!3m2!1sko!2skr!4v1770599962229!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <div class="location-details-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                    <div class="info-box" style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid #2C3E50;">
+                        <h3 style="font-size: 1.3rem; color: #2C3E50; margin-bottom: 15px; display: flex; align-items: center;">
+                            <span style="margin-right: 10px;">📍</span> 본사 위치
+                        </h3>
+                        <p style="color: #666; line-height: 1.8;">
+                            경기도 오산시 수목원로88번길 35<br>
+                            지식산업센터 26층 F2608A호
+                        </p>
+                    </div>
+
+                    <div class="info-box" style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid #7ED321;">
+                        <h3 style="font-size: 1.3rem; color: #2C3E50; margin-bottom: 15px; display: flex; align-items: center;">
+                            <span style="margin-right: 10px;">📞</span> 연락처
+                        </h3>
+                        <p style="color: #666; line-height: 1.8;">
+                            <strong>T:</strong> 070-4353-2999<br>
+                            <strong>F:</strong> 070-4032-2727<br>
+                            <strong>E:</strong> foreworks@foreworks.co.kr
+                        </p>
+                    </div>
+
+                    <div class="info-box" style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid #FF6B35;">
+                        <h3 style="font-size: 1.3rem; color: #2C3E50; margin-bottom: 15px; display: flex; align-items: center;">
+                            <span style="margin-right: 10px;">🚗</span> 방문 안내
+                        </h3>
+                        <p style="color: #666; line-height: 1.8;">
+                            건물 내 지하 주차장 이용 가능합니다.<br>
+                            (오산역에서 도보 15분 거리)
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
