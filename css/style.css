@@ -115,4 +115,50 @@ footer {
     text-align: center;
     font-size: 0.85rem;
 }
+/* 기업정보 전용 스타일 */
+.info-section { padding: 60px 0; }
+
+.sub-title {
+    font-size: 1.8rem;
+    color: var(--primary-navy);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent-green); /* 제목 아래 포인트 선 */
+    display: inline-block;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+.info-table th {
+    width: 200px;
+    background: var(--soft-gray);
+    color: var(--primary-navy);
+    text-align: left;
+    padding: 15px 25px;
+    border-bottom: 1px solid var(--border-gray);
+    font-weight: 700;
+}
+
+.info-table td {
+    padding: 15px 25px;
+    border-bottom: 1px solid var(--border-gray);
+    color: var(--text-main);
+}
+
+/* 오시는 길 레이아웃 */
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .location-grid { grid-template-columns: 1fr; }
+    .info-table th { width: 120px; padding: 10px; }
+}
 
