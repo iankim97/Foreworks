@@ -12,11 +12,12 @@
         }
 
         :root {
-            --primary-green: #7ED321;
+            --primary-navy: #2C3E50; /* 차분하고 신뢰감 있는 메인색 */
+            --primary-green: #7ED321; /* 포인트 그린 */
             --primary-orange: #FF6B35;
             --dark: #1a1a1a;
             --gray: #666666;
-            --light-gray: #f5f5f5;
+            --light-gray: #f8f9fa;
             --white: #ffffff;
         }
 
@@ -30,90 +31,14 @@
         /* Header & Navigation */
         header {
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 2px solid #ececec;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .header-top {
-            background: var(--dark);
-            color: var(--white);
-            padding: 10px 0;
-            font-size: 0.9rem;
-        }
-
-        .header-top .container {
-            display: flex;
-            justify-content: flex-end;
-            gap: 30px;
-        }
-
-        .header-top a {
-            color: var(--white);
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-
-        .header-top a:hover {
-            opacity: 1;
-        }
-
         .header-main {
-            padding: 20px 0;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-            transition: transform 0.3s;
-        }
-
-        .logo img:hover {
-            transform: scale(1.05);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 40px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-green), var(--primary-orange));
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after,
-        nav a.active::after {
-            width: 100%;
+            padding: 15px 0;
         }
 
         .container {
@@ -122,23 +47,78 @@
             padding: 0 20px;
         }
 
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 로고 + 텍스트 아이덴티티 */
+        .logo-area {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .company-name {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            line-height: 1.1;
+        }
+
+        .company-slogan {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--primary-green);
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-green);
+        }
+
         /* Page Hero */
         .page-hero {
-            background: linear-gradient(135deg, rgba(126, 211, 33, 0.05) 0%, rgba(255, 107, 53, 0.05) 100%);
+            background: var(--primary-navy);
             padding: 80px 0;
             text-align: center;
+            color: var(--white);
         }
 
         .page-hero h1 {
-            font-size: 3rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
         }
 
         .page-hero p {
-            font-size: 1.2rem;
-            color: var(--gray);
+            font-size: 1.1rem;
+            opacity: 0.8;
         }
 
         /* Section */
@@ -146,503 +126,128 @@
             padding: 80px 0;
         }
 
-        section:nth-child(even) {
-            background: var(--light-gray);
-        }
-
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-            font-weight: 700;
+            font-size: 2.2rem;
+            color: var(--primary-navy);
             position: relative;
             display: inline-block;
+            padding-bottom: 15px;
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-green), var(--primary-orange));
-            border-radius: 2px;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-green);
         }
 
-        .section-title p {
-            font-size: 1.1rem;
-            color: var(--gray);
-            margin-top: 25px;
-        }
-
-        /* Company Overview */
+        /* Company Overview Cards */
         .overview-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
 
         .overview-card {
             background: var(--white);
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .overview-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-navy);
         }
 
         .overview-card h3 {
-            font-size: 1.5rem;
-            color: var(--primary-orange);
+            color: var(--primary-navy);
             margin-bottom: 20px;
-            font-weight: 600;
+            font-size: 1.4rem;
         }
 
         .info-row {
             display: flex;
-            padding: 12px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .info-row:last-child {
-            border-bottom: none;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
         }
 
         .info-label {
-            font-weight: 600;
-            color: var(--dark);
-            min-width: 100px;
-        }
-
-        .info-value {
-            color: var(--gray);
-            flex: 1;
-        }
-
-        .overview-card ul {
-            list-style: none;
-        }
-
-        .overview-card li {
-            padding: 10px 0;
-            color: var(--gray);
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .overview-card li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--primary-orange);
-        }
-
-        /* Vision Mission */
-        .vision-mission {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .vm-card {
-            background: var(--white);
-            padding: 50px 40px;
-            border-radius: 10px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .vm-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-green), var(--primary-orange));
-        }
-
-        .vm-card h3 {
-            font-size: 2rem;
-            color: var(--dark);
-            margin-bottom: 30px;
             font-weight: 700;
+            width: 90px;
+            color: var(--primary-navy);
         }
 
-        .vm-card p {
-            font-size: 1.2rem;
-            color: var(--gray);
-            line-height: 1.8;
-        }
-
-        /* History Timeline */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--primary-green), var(--primary-orange));
-        }
-
-        .timeline-item {
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            text-align: right;
-            padding-right: 50%;
-            padding-left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            text-align: left;
-            padding-left: 50%;
-            padding-right: 0;
-        }
-
-        .timeline-content {
-            background: var(--white);
-            padding: 25px 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            position: relative;
-            margin: 0 30px;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content::after {
-            content: '';
-            position: absolute;
-            right: -15px;
-            top: 20px;
-            width: 0;
-            height: 0;
-            border-left: 15px solid var(--white);
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::after {
-            content: '';
-            position: absolute;
-            left: -15px;
-            top: 20px;
-            width: 0;
-            height: 0;
-            border-right: 15px solid var(--white);
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-        }
-
-        .timeline-year {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        .timeline-description {
-            font-size: 1.1rem;
-            color: var(--gray);
-            line-height: 1.7;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: var(--primary-orange);
-            border: 4px solid var(--white);
-            border-radius: 50%;
-            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
-        }
-
-        /* Organization Chart */
-        .org-chart {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .org-level {
-            margin-bottom: 40px;
-        }
-
-        .org-box {
-            background: var(--white);
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 20px 30px;
-            display: inline-block;
-            min-width: 200px;
-            position: relative;
-            margin: 0 10px;
-            transition: all 0.3s;
-        }
-
-        .org-box:hover {
-            border-color: var(--primary-green);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .org-box.ceo {
-            background: linear-gradient(135deg, var(--primary-green), var(--primary-orange));
-            color: var(--white);
-            border: none;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .org-box.department {
-            background: var(--light-gray);
-            font-weight: 600;
-        }
-
-        .org-box.team {
-            font-size: 0.95rem;
-        }
-
-        .org-connector {
-            width: 2px;
-            height: 30px;
-            background: #d0d0d0;
-            margin: 0 auto;
-        }
-
-        .org-horizontal {
+        /* Location Section */
+        .location-layout {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        /* Location Map */
-        .location-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            flex-direction: column;
             gap: 40px;
-            align-items: start;
-        }
-
-        .location-info {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .location-info h3 {
-            font-size: 1.8rem;
-            color: var(--dark);
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .location-item {
-            margin-bottom: 25px;
-        }
-
-        .location-item h4 {
-            font-size: 1.2rem;
-            color: var(--primary-orange);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .location-item p {
-            color: var(--gray);
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .location-item a {
-            color: var(--primary-green);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .location-item a:hover {
-            text-decoration: underline;
         }
 
         .map-container {
-            background: var(--light-gray);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            height: 500px;
-        }
-
-        .map-container iframe {
             width: 100%;
-            height: 100%;
-            border: none;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: var(--white);
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
+        .details-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .footer-section h3 {
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+        .info-box {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-navy);
         }
 
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 10px;
-            line-height: 1.8;
-            text-decoration: none;
-            display: block;
+        .info-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-navy);
         }
 
-        .footer-section a:hover {
-            color: var(--primary-green);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
+        footer {
+            background: #222;
+            color: #ccc;
+            padding: 40px 0;
             text-align: center;
-            color: rgba(255,255,255,0.5);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .overview-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .vision-mission {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline::before {
-                left: 30px;
-            }
-
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                text-align: left;
-                padding-left: 80px;
-                padding-right: 0;
-            }
-
-            .timeline-content {
-                margin: 0;
-            }
-
-            .timeline-item .timeline-content::after {
-                left: -15px !important;
-                right: auto !important;
-                border-right: 15px solid var(--white);
-                border-left: none !important;
-                border-top: 10px solid transparent;
-                border-bottom: 10px solid transparent;
-            }
-
-            .timeline-dot {
-                left: 30px;
-            }
-
-            .location-section {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .page-hero h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .org-horizontal {
-                flex-direction: column;
-                align-items: center;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="header-top">
-            <div class="container">
-                <a href="mailto:foreworks@foreworks.co.kr">📧 foreworks@foreworks.co.kr</a>
-                <a href="tel:070-4353-2999">📞 070-4353-2999</a>
-            </div>
-        </div>
-        <div class="header-main">
-            <div class="container">
-                <div class="header-content">
-                    <a href="index.html" class="logo">
-                        <img src="images/logo.png" alt="FOREWORKS">
-                    </a>
-                    <nav>
-                        <ul>
-                            <li><a href="index.html">홈</a></li>
-                            <li><a href="company.html" class="active">회사소개</a></li>
-                            <li><a href="business.html">사업영역</a></li>
-                            <li><a href="technology.html">보유기술</a></li>
-                            <li><a href="products.html">주요제품</a></li>
-                            <li><a href="contact.html">문의하기</a></li>
-                        </ul>
-                    </nav>
-                </div>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo-area">
+                    <img src="images/logo.png" alt="FOREWORKS" class="logo-img">
+                    <div class="logo-text-group">
+                        <span class="company-name">FOREWORKS</span>
+                        <span class="company-slogan">We work for your works</span>
+                    </div>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">홈</a></li>
+                        <li><a href="company.html" class="active">회사소개</a></li>
+                        <li><a href="business.html">사업영역</a></li>
+                        <li><a href="contact.html">문의하기</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
 
-    <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
             <h1>회사소개</h1>
@@ -650,281 +255,53 @@
         </div>
     </section>
 
-    <!-- Company Overview -->
     <section>
         <div class="container">
             <div class="section-title">
-                <h2>회사 개요</h2>
-                <p>Vision Inspection System | System Engineering | Automation</p>
+                <h2>기업 개요</h2>
             </div>
-            
             <div class="overview-grid">
                 <div class="overview-card">
                     <h3>기업 정보</h3>
-                    <div class="info-row">
-                        <span class="info-label">회사명</span>
-                        <span class="info-value">㈜포어웍스 (FOREWORKS CO., LTD)</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label">대표이사</span>
-                        <span class="info-value">서경식</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label">설립일</span>
-                        <span class="info-value">2019.06.01 / 2025.05.01 (법인 전환)</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label">임직원수</span>
-                        <span class="info-value">6명 (2025년 10월 기준)</span>
-                    </div>
+                    <div class="info-row"><span class="info-label">회사명</span><span>㈜포어웍스</span></div>
+                    <div class="info-row"><span class="info-label">대표이사</span><span>서경식</span></div>
+                    <div class="info-row"><span class="info-label">설립일</span><span>2019.06.01 (2025 법인전환)</span></div>
                 </div>
-
-                <div class="overview-card">
-                    <h3>사업장 정보</h3>
-                    <div class="info-row">
-                        <span class="info-label">본사</span>
-                        <span class="info-value">경기도 오산시 수목원로88번길 35, 지식산업센터 26층 F2608A호</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label">연구소</span>
-                        <span class="info-value">동 지식산업센터 633호</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label">공장</span>
-                        <span class="info-value">경기도 화성시 정남면 정남동로 339 가동</span>
-                    </div>
-                </div>
-
-                <div class="overview-card">
-                    <h3>주요 사업</h3>
-                    <ul>
-                        <li>디스플레이 장비 부품 (Air Floating System)</li>
-                        <li>Display용 자동 검사기 및 세정기</li>
-                        <li>반도체용 자동 검사/측정기</li>
-                        <li>물류/자동화 설비</li>
-                        <li>이차전지 생산 자동화 설비</li>
-                        <li>자동화 ROBOT</li>
-                    </ul>
+                <div class="overview-card" style="border-top-color: var(--primary-green);">
+                    <h3>사업장 위치</h3>
+                    <p>본사: 경기도 오산시 수목원로88번길 35, 26층 F2608A호</p>
+                    <p style="margin-top:10px;">연구소: 지식산업센터 633호</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Vision & Mission -->
     <section style="background: var(--light-gray);">
-        <div class="container">
-            <div class="section-title">
-                <h2>비전 & 미션</h2>
-                <p>우리의 목표와 가치</p>
-            </div>
-            
-            <div class="vision-mission">
-                <div class="vm-card">
-                    <h3>🎯 Vision</h3>
-                    <p>반도체, 디스플레이, 이차전지 산업의<br>최고 파트너로 성장하여<br>글로벌 기술 혁신을 선도합니다</p>
-                </div>
-                <div class="vm-card">
-                    <h3>💡 Mission</h3>
-                    <p>최첨단 비전 검사 시스템과<br>자동화 솔루션을 통해<br>고객의 생산성과 품질을 극대화합니다</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- History -->
-    <section>
-        <div class="container">
-            <div class="section-title">
-                <h2>주요 연혁</h2>
-                <p>포어웍스의 성장 과정</p>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2025.05</span>
-                        <p class="timeline-description">법인 전환 (주식회사 포어웍스)</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2024</span>
-                        <p class="timeline-description">Mobility Vision Inspection System 개발<br>자동차 부품 검사 시스템 공급</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2023</span>
-                        <p class="timeline-description">이차전지 Electrode Inspection System 납품<br>Air Floating System 특허 추가 등록</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2022</span>
-                        <p class="timeline-description">Display In-line AOI System 개발<br>물류 자동화 설비 공급</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2021</span>
-                        <p class="timeline-description">반도체 Wafer 검사 시스템 다수 납품<br>연구소 설립 (지식산업센터 633호)</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2020</span>
-                        <p class="timeline-description">Air Floating System 특허 등록<br>대전방지 코팅 기술 개발</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2019.06</span>
-                        <p class="timeline-description">포어웍스 설립<br>비전 검사 시스템 사업 시작</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Organization Chart -->
-    <section style="background: var(--light-gray);">
-        <div class="container">
-            <div class="section-title">
-                <h2>조직도</h2>
-                <p>체계적인 조직 구성</p>
-            </div>
-            
-            <div class="org-chart">
-                <div class="org-level">
-                    <div class="org-box ceo">대표이사</div>
-                </div>
-                
-                <div class="org-connector"></div>
-                
-                <div class="org-level">
-                    <div class="org-horizontal">
-                        <div class="org-box department">경영지원팀</div>
-                        <div class="org-box department">시스템사업부</div>
-                        <div class="org-box department">마케팅/영업/고객지원/구매</div>
-                    </div>
-                </div>
-                
-                <div class="org-connector"></div>
-                
-                <div class="org-level">
-                    <div class="org-horizontal">
-                        <div class="org-box team">기구설계</div>
-                        <div class="org-box team">AI Vision</div>
-                        <div class="org-box team">PC 제어</div>
-                        <div class="org-box team">PLC 전장</div>
-                        <div class="org-box team">생산 C/S</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location -->
-<section>
         <div class="container">
             <div class="section-title">
                 <h2>오시는 길</h2>
-                <p>포어웍스를 찾아오시는 방법</p>
             </div>
-            
             <div class="location-layout">
-                <div class="map-container" style="width: 100%; height: 450px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-bottom: 40px;">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3177.346849926839!2d127.0658414763351!3d37.16851174712066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b3bc0c102c98d%3A0x7a305d2e09121a91!2z6rK96riw64-EIOyYpOyCsOy5CDsiJeu66mY66GcODjrsojquLggMzU!5e0!3m2!1sko!2skr!4v1715650000000!5m2!1sko!2skr" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.056345686308!2d127.0543212!3d37.1513245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b3b64893790e7%3A0x70d8a7c28a8d116b!2z6rK96riw64-EIOyYpO BernieIOyLnCDshJ66qp7JuQ66GcODjhu4jq易IDM1!5e0!3m2!1sko!2skr!4v1715650000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-
-                <div class="location-details-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-                    <div class="info-box" style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid #2C3E50;">
-                        <h3 style="font-size: 1.3rem; color: #2C3E50; margin-bottom: 15px; display: flex; align-items: center;">
-                            <span style="margin-right: 10px;">📍</span> 본사 위치
-                        </h3>
-                        <p style="color: #666; line-height: 1.8;">
-                            경기도 오산시 수목원로88번길 35<br>
-                            지식산업센터 26층 F2608A호
-                        </p>
+                <div class="details-grid">
+                    <div class="info-box">
+                        <h3>📍 상세 주소</h3>
+                        <p>경기도 오산시 수목원로88번길 35<br>지식산업센터 26층 F2608A호</p>
                     </div>
-
-                    <div class="info-box" style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid #7ED321;">
-                        <h3 style="font-size: 1.3rem; color: #2C3E50; margin-bottom: 15px; display: flex; align-items: center;">
-                            <span style="margin-right: 10px;">📞</span> 연락처
-                        </h3>
-                        <p style="color: #666; line-height: 1.8;">
-                            <strong>T:</strong> 070-4353-2999<br>
-                            <strong>F:</strong> 070-4032-2727<br>
-                            <strong>E:</strong> foreworks@foreworks.co.kr
-                        </p>
-                    </div>
-
-                    <div class="info-box" style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid #FF6B35;">
-                        <h3 style="font-size: 1.3rem; color: #2C3E50; margin-bottom: 15px; display: flex; align-items: center;">
-                            <span style="margin-right: 10px;">🚗</span> 방문 안내
-                        </h3>
-                        <p style="color: #666; line-height: 1.8;">
-                            건물 내 지하 주차장 이용 가능합니다.<br>
-                            (오산역에서 도보 15분 거리)
-                        </p>
+                    <div class="info-box" style="border-left-color: var(--primary-green);">
+                        <h3>📞 고객 지원</h3>
+                        <p>TEL: 070-4353-2999<br>Email: foreworks@foreworks.co.kr</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Footer -->
+
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>FOREWORKS</h3>
-                    <p>비전 검사 시스템, 시스템 엔지니어링, 자동화 솔루션 전문기업</p>
-                    <p style="margin-top: 20px;">We work for your Works</p>
-                </div>
-                <div class="footer-section">
-                    <h3>바로가기</h3>
-                    <a href="company.html">회사소개</a>
-                    <a href="business.html">사업영역</a>
-                    <a href="technology.html">보유기술</a>
-                    <a href="products.html">주요제품</a>
-                </div>
-                <div class="footer-section">
-                    <h3>제품</h3>
-                    <a href="products.html#aoi">자동 검사 시스템</a>
-                    <a href="products.html#air-floating">Air Floating System</a>
-                    <a href="products.html#automation">자동화 시스템</a>
-                </div>
-                <div class="footer-section">
-                    <h3>연락처</h3>
-                    <p>경기도 오산시 수목원로88번길 35<br>지식산업센터 26층 F2608A호</p>
-                    <a href="mailto:foreworks@foreworks.co.kr">foreworks@foreworks.co.kr</a>
-                    <a href="tel:070-4353-2999">070-4353-2999</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>Copyright © 2025 FOREWORKS. All rights reserved.</p>
-            </div>
+            <p>© 2025 FOREWORKS CO., LTD. All rights reserved.</p>
         </div>
     </footer>
 </body>
