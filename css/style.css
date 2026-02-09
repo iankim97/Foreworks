@@ -1,0 +1,10 @@
+/* style.css 내용 예시 */
+:root {
+    --primary-navy: #2C3E50;
+    --accent-green: #53823E;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text-main);
+}
